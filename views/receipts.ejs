@@ -1,0 +1,16 @@
+
+    <form action="/receipts/create" method="post">
+      <button class="mt-2 mb-2" type="submit"><img src="/images/add.png" width="20" height="20" alt="">Add a new receipt</button>
+   </form>
+    
+    <% for(var i=receipts.length-1;i>=0;i--) { %>
+       <div class="mb-3 p-3 rounded bg-primary" onclick="goto('<%= receipts[i].id %>')">
+       <p>Company: <%= receipts[i].company %></p>
+       <p>Total: <%= receipts[i].total %></p>
+       <p>Date: <%= receipts[i].date %></p>
+       <form action="/receipts/remove/<%= receipts[i].id %>" method="post">
+         <button class="mt-2" type="submit"><img src="/images/delete.png" width="20" height="20" alt="">Delete this receipt!</button>
+      </form>
+       </div>
+    <% } %>
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="eng">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>Receiptify</title>
+      <meta name="description" content="Receiptify www manager">
+      <meta name="keywords" content="Receiptify, receipts">
+      <meta name="author" content="Zachariasz Jankowski">
+      <meta http-equiv="X-Ua-Compatible" content="IE=edge">
+      <link rel="stylesheet" href="/css/bootstrap.min.css">
+      <link rel="stylesheet" href="/css/main.css">
+   </head>
+   <body>
+      <header>
+
+         <nav class="navbar navbar-dark bg-main navbar-expand-lg fixed-top ">
+            <a class="navbar-brand offset-lg-2" href="#"><img src="/images/db.png" width="30" height="30" class="d-inline-block mr-1 align-bottom" alt="">Receiptify</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="special collapse navbar-collapse" id="mainmenu">
+               <ul class="navbar-nav ml-auto">
+
+                  <% if(menu=='1'|menu=='2') { %> 
+                  <li class="nav-item">
+                     <a class="nav-link <% if(menu=='1') { %> <%='active'; %> <% } %>" href="/users/login"> Login </a>
+                  </li>
+                  
+                  <li class="nav-item">
+                     <a class="nav-link <% if(menu=='2') { %> <%='active'; %> <% } %>" href="/users/register"> Register </a>
+                  </li>
+                  <% } %>
+                  <% if(menu!='1' & menu!='2') { %> 
+                  <li class="nav-item">
+                     <a class="nav-link <% if(menu=='3') { %> <%='active'; %> <% } %> " href="/users/logout"> Receipts </a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link <% if(menu=='4') { %> <%='active'; %> <% } %> " href="/users/logout"> Products </a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link <% if(menu=='5') { %> <%='active'; %> <% } %> " href="/users/logout"> Companies </a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="/users/logout"> Logout </a>
+                  </li>
+
+                  <% } %>
+               </ul>
+            </div>
+         </nav>
+      </header>
+      <main>
+
+
+
+         <div class="content col-lg-4 offset-lg-4 ">
+            <div class=" shadow-sm p-3 mb-2 bg-white rounded">
+               <p> 
+                <%- body %>
+               </p>
+            </div>
+         </div>
+
+
+
+      </main>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="/scripts/bootstrap/bootstrap.min.js"></script>
+      <script src="/scripts/pick.js"></script>
+   </body>
+</html>
