@@ -14,13 +14,14 @@ const products = require('./routes/products');
 
 const port = 8080;
 const mongoose = require('mongoose');
-const MONGO_USERNAME = 'sammy';
-const MONGO_PASSWORD = 'your_password';
-const MONGO_HOSTNAME = '127.0.0.1';
-const MONGO_PORT = '27017';
-const MONGO_DB = 'sharkinfo';
-const url = `mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_HOSTNAME}:${MONGO_PORT}/${MONGO_DB}?authSource=admin`;
-mongoose.connect(url, {useNewUrlParser: true},(err)=>{console.log('connected to db!')});
+// const MONGO_USERNAME = 'sammy';
+// const MONGO_PASSWORD = 'your_password';
+// const MONGO_HOSTNAME = '127.0.0.1';
+// const MONGO_PORT = '27017';
+// const MONGO_DB = 'sharkinfo';
+//const url = `mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_HOSTNAME}:${MONGO_PORT}/${MONGO_DB}?authSource=admin`;
+const url = `mongodb+srv://receiptify:FCaXmAtQ2ara@cluster0-z0fkn.mongodb.net/test?retryWrites=true&w=majority`;
+mongoose.connect(url,{ useUnifiedTopology: true, useNewUrlParser: true },(err)=>{console.log('connected to db!')});
 
 
 app.use(expressLayouts);
