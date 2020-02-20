@@ -1,0 +1,18 @@
+
+        <h4 class="mt-2">
+            All Retailers </h4>
+            <p><a href="/companies"> See your retailers instead </a></p>
+           
+   
+            <hr>
+   
+         
+         <% for(var i=com.length-1;i>=0;i--) { %>
+            <div class="mb-3 p-3 rounded bg-primary" onclick="gotoCompanyPublic('<%= com[i].id %>')">
+            <p>Name: <%= com[i].name %></p>
+            <p>Company: <%= com[i].company %></p>
+            <p>Status: <%= com[i].status %></p>
+            </div>
+         <% } %>
+     
+     

@@ -13,7 +13,7 @@
                 <form  action="/receipts/update/<%= receipts[0].id %>" method="post">
                     <div class="caption pb-3">Modify your receipt!</div>
                     <div class="form-group row">
-                    <label class="oflow form-check-label pr-2" for="company">Company: </label><input class="ml-auto" id="company" type="text" placeholder="<%= receipts[0].company %>" name="company">
+                    <label class="oflow form-check-label pr-2" for="company">Retailer: </label><input class="ml-auto" id="company" type="text" placeholder="<%= receipts[0].company %>" name="company">
                     </div>
                     <div class="form-group row">
                     <label class="oflow form-check-label pr-2" for="total">Total: </label><input class="ml-auto" id="total" type="text" placeholder="<%= receipts[0].total %>" name="total">
@@ -28,8 +28,9 @@
     <% for(var j=0;j < receipts[0].products.length;j++) { %>
 
         <hr>
-        <div class="d-inline-block">
-                <p>product: <%= receipts[0].products[j] %></p>
+        <div class="d-inline-block bg-success p-2" onclick="gotoProduct('<%= receipts[0].ids[j] %>')">
+                <p>product id: <%= receipts[0].ids[j] %></p>
+                <p>Receipt Name: <%= receipts[0].products[j] %></p>
                 <p>price: <%= receipts[0].prices[j] %></p>
                 <p>quantity: <%= receipts[0].quantities[j] %></p>
                 <a class="ml-auto bg-white p-1" href="../../receipts/product/remove/<%= receipts[0].id %>/<%= j %>" ><img src="/images/delete.png" width="20" height="20" class="ml-auto" alt=""></a>

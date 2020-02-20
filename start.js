@@ -5,11 +5,13 @@ const passport = require('passport');
 const flash = require('connect-flash');
 const session = require('express-session');
 const expressLayouts = require('express-ejs-layouts');
+
 const start = require('./routes/start');
 const receipts = require('./routes/receipts');
 const users = require('./routes/users');
 const companies = require('./routes/companies');
 const products = require('./routes/products');
+
 const port = 8080;
 const mongoose = require('mongoose');
 const MONGO_USERNAME = 'sammy';
@@ -56,8 +58,10 @@ app.use(function(req, res, next) {
 app.use('/', start);
 app.use('/receipts', receipts);
 app.use('/users', users);
-//app.use('/companies', companies);
-//app.use('/products', products);
+app.use('/companies', companies);
+app.use('/products', products);
+
+
 app.listen(port, function () {
   console.log('Example app listening on port 8080!');
 

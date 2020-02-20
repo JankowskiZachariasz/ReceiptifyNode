@@ -1,0 +1,35 @@
+
+
+    <form action="/companies" method="get">
+        <button class=" mb-2" type="submit"><img src="/images/arrow.png" width="20" height="20" alt="">back to companies</button>
+     </form>
+
+<div class="mb-3 p-3 rounded bg-primary">
+        <div class="pl-1 pr-1">
+
+        <p>ID: <%= com[0].id %></p>
+        <form>
+        <label class="oflow form-check-label pr-2" for="status">Status: </label><input readonly class="ml-auto" id="status" type="text" placeholder="<%= com[0].status %>" name="status">
+        </form>
+        <p>
+                <form  action="/companies/update/<%= com[0].id %>" method="post">
+
+                    <div class="caption pb-3">Modify your retailer!</div>
+                    <div class="form-group row">
+                    <label class="oflow form-check-label pr-2" for="name">Name: </label><input class="ml-auto" id="name" type="text" placeholder="<%= com[0].name %>" name="name">
+                    </div>
+                    <div class="form-group row">
+                    <label class="oflow form-check-label pr-2" for="company">Company: </label><input class="ml-auto" id="company" type="text" placeholder="<%= com[0].company %>" name="company">
+                    </div>
+                    <button type="submit">Submit changes</button>
+                </form>
+        </p>
+
+        
+        </div>
+</div>
+
+<form action="/companies/remove/<%= com[0].id %>" method="post">
+        <button class="mt-2" type="submit"><img src="/images/delete.png" width="20" height="20" alt="">Delete this product!</button>
+</form>
+     

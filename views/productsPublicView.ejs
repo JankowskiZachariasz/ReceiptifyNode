@@ -1,0 +1,39 @@
+
+
+    <form action="/products/public" method="get">
+        <button class=" mb-2" type="submit"><img src="/images/arrow.png" width="20" height="20" alt="">back to products</button>
+     </form>
+
+<div class="mb-3 p-3 rounded bg-primary">
+        <div class="pl-1 pr-1">
+
+        <p>ID: <%= prods[0].id %></p>
+
+        <p>
+                <form>
+                    <div class="form-group row">
+                    <label class="oflow form-check-label pr-2" for="name">Name: </label><input readonly class="ml-auto" id="name" type="text" placeholder="<%= prods[0].name %>" name="name">
+                    </div>
+                    <div class="form-group row">
+                    <label class="oflow form-check-label pr-2" for="receiptName">R.Name: </label><input readonly class="ml-auto" id="receiptName" type="text" placeholder="<%= prods[0].receiptName %>" name="receiptName">
+                    </div>
+                    <div class="form-group row">
+                    <label class="oflow form-check-label pr-2" for="company">Company: </label><input readonly class="ml-auto" id="company" type="text" placeholder="<%= prods[0].company %>" name="company">
+                    </div>
+                    <div class="form-group row">
+                    <label class="oflow form-check-label pr-2" for="fats">Fats: </label><input readonly class="ml-auto" id="fats" type="text" placeholder="<%= prods[0].fats %>" name="fats">
+                    </div>
+                    <div class="form-group row">
+                    <label class="oflow form-check-label pr-2" for="carbo">Carbo.: </label><input readonly class="ml-auto" id="carbo" type="text" placeholder="<%= prods[0].carbo %>" name="carbo">
+                    </div>
+                    <div class="form-group row">
+                    <label class="oflow form-check-label pr-2" for="calories">Calories: </label><input readonly class="ml-auto" id="calories" type="text" placeholder="<%= prods[0].calories %>" name="calories">
+                    </div>
+                </form>
+        </p>
+
+        
+        </div>
+</div>
+
+     

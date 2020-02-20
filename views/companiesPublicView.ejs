@@ -1,0 +1,29 @@
+
+
+    <form action="/companies/public" method="get">
+        <button class=" mb-2" type="submit"><img src="/images/arrow.png" width="20" height="20" alt="">back to companies</button>
+     </form>
+
+     <div class="mb-3 p-3 rounded bg-primary">
+        <div class="pl-1 pr-1">
+
+        <p>ID: <%= com[0].id %></p>
+        <form>
+            <label class="oflow form-check-label pr-2" for="status">Status: </label><input readonly class="ml-auto" id="status" type="text" placeholder="<%= com[0].status %>" name="status">
+        </form>
+        <p>
+                <form>
+                    <div class="form-group row">
+                    <label class="oflow form-check-label pr-2" for="name">Name: </label><input readonly class="ml-auto" id="name" type="text" placeholder="<%= com[0].name %>" name="name">
+                    </div>
+                    <div class="form-group row">
+                    <label class="oflow form-check-label pr-2" for="company">Company: </label><input readonly class="ml-auto" id="company" type="text" placeholder="<%= com[0].company %>" name="company">
+                    </div>
+                </form>
+        </p>
+
+        
+        </div>
+</div>
+
+     

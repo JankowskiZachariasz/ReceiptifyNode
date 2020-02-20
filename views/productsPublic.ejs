@@ -1,0 +1,19 @@
+
+        <h4 class="mt-2">
+            Public Products </h4>
+            <p><a href="/products"> See your products instead </a></p>
+           
+   
+            <hr>
+   
+         
+         <% for(var i=prods.length-1;i>=0;i--) { %>
+            <% var name = ""; %>
+            <% if(prods[i].name =='empty') name = prods[i].receiptName; else {name = name=prods[i].name;} %>
+            <div class="mb-3 p-3 rounded bg-primary" onclick="gotoProductPublic('<%= prods[i].id %>')">
+            <p>Name: <%= name %></p>
+            <p>Company: <%= prods[i].company %></p>
+            </div>
+         <% } %>
+     
+     
