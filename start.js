@@ -11,6 +11,7 @@ const receipts = require('./routes/receipts');
 const users = require('./routes/users');
 const companies = require('./routes/companies');
 const products = require('./routes/products');
+const api = require('./routes/api');
 
 const port = 8080;
 const mongoose = require('mongoose');
@@ -61,6 +62,7 @@ app.use('/receipts', receipts);
 app.use('/users', users);
 app.use('/companies', companies);
 app.use('/products', products);
+app.use('/api', api);
 
 
 app.listen(port, function () {
