@@ -5,6 +5,7 @@ const passport = require('passport');
 const flash = require('connect-flash');
 const session = require('express-session');
 const expressLayouts = require('express-ejs-layouts');
+const bodyParser = require('body-parser');
 
 const start = require('./routes/start');
 const receipts = require('./routes/receipts');
@@ -48,6 +49,7 @@ app.use(passport.session());
 app.use(flash());
 
 // Global variables
+app.use(bodyParser.text({type:"*/*"}));
 app.use(function(req, res, next) {
   res.locals.success_msg = req.flash('success_msg');
   res.locals.error_msg = req.flash('error_msg');
@@ -63,6 +65,7 @@ app.use('/users', users);
 app.use('/companies', companies);
 app.use('/products', products);
 app.use('/api', api);
+
 
 
 app.listen(port, function () {
