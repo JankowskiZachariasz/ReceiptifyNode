@@ -47,7 +47,7 @@ router.post('/login', (req, res) => {
         email: data.email
       }).exec(function (err, user){
 
-        if (err || typeof user === 'undefined' || typeof user.password === 'undefined' || user.password=="") res.sendStatus(403);
+        if (err || typeof user === 'undefined' || user == null) res.sendStatus(403);
         else{
         bcrypt.compare(data.password, user.password, (err, isMatch) => {
           if (err) res.sendStatus(500);
