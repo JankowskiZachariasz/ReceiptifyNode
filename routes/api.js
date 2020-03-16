@@ -46,7 +46,7 @@ router.post('/login', (req, res) => {
       }).exec(function (err, user){
 
         if (err) res.sendStatus(403);
-
+        else{
         bcrypt.compare(data.password, user.password, (err, isMatch) => {
           if (err) res.sendStatus(500);
           if (isMatch) {
@@ -59,7 +59,7 @@ router.post('/login', (req, res) => {
           } 
           else { res.sendStatus(403); }
         });
-
+      }
     });
 });
 
