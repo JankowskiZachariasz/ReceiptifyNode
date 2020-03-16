@@ -57,7 +57,7 @@ router.post('/login', (req, res) => {
 
                 if (err) res.sendStatus(500);
 
-                res.json({ token }); });
+                res.json({ token: token, username: data.email }); });
           } 
           else { res.sendStatus(403); }
         });
