@@ -41,11 +41,13 @@ router.post('/receipt', verifyToken, (req, res) => {
 router.post('/login', (req, res) => {
   
     var data = JSON.parse(req.body);
+    
+
     User.findOne({
         email: data.email
       }).exec(function (err, user){
 
-        if (err) res.sendStatus(403);
+        if (err || typeof user === 'undefined' || typeof user.password === 'undefined' || user.password=="") res.sendStatus(403);
         else{
         bcrypt.compare(data.password, user.password, (err, isMatch) => {
           if (err) res.sendStatus(500);
